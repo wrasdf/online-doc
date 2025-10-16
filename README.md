@@ -27,6 +27,11 @@
   - Use `uv` as python dependencies management tools
   - Use class pattern to write python code
 
+- Database
+  - Use Postgres DB for data consistency
+
+- Deployment
+  - Easy to deploy to k8s cluster
 
 ### non-functional requirements
 
@@ -43,3 +48,16 @@
   - consistency
   - relibility
   - cost
+
+
+/speckit.plan 
+- use docker + docker-compose for local development
+- Easy to be deployed to k8s cluster
+- Use Postgres DB for data consistency (local use postgres docker)
+- FrontEnd Side
+  - Use React + next.js to implement UI logic
+  - Use bootstrap as the UI framework
+- Backend Side
+  - Use python as the programme language to handle the restful api calls
+  - Use `uv` as python dependencies management tools
+  - Use class pattern to write python code
