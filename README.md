@@ -15,6 +15,10 @@
 ### Tech Requirements
 - use docker + docker-compose for local development
 
+- Easy to deploy to k8s cluster
+
+- Use Postgres DB for data consistency
+
 - FrontEnd Side
   - Use React + next.js to implement UI part
 
