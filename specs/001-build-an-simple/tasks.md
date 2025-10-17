@@ -19,15 +19,15 @@
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create backend project structure in `backend/`
-- [ ] T002 Create frontend project structure in `frontend/`
-- [ ] T003 Initialize Python project with uv in `backend/` and add dependencies from `plan.md` to `backend/pyproject.toml`
-- [ ] T004 Initialize Next.js project in `frontend/` and add dependencies from `plan.md` to `frontend/package.json`
-- [ ] T005 [P] Configure linting (ruff) and formatting (black) for backend in `backend/pyproject.toml`
-- [ ] T006 [P] Configure linting (ESLint) and formatting (Prettier) for frontend in `frontend/.eslintrc.json` and `frontend/.prettierrc`
-- [ ] T007 [P] Create `docker-compose.yml` for local development with `postgres`, `redis`, `backend`, and `frontend` services as defined in `quickstart.md`
-- [ ] T008 [P] Create `Dockerfile` for backend service in `backend/Dockerfile`
-- [ ] T009 [P] Create `Dockerfile` for frontend service in `frontend/Dockerfile`
+- [x] T001 Create backend project structure in `backend/`
+- [x] T002 Create frontend project structure in `frontend/`
+- [x] T003 Initialize Python project with uv in `backend/` and add dependencies from `plan.md` to `backend/pyproject.toml`
+- [x] T004 Initialize Next.js project in `frontend/` and add dependencies from `plan.md` to `frontend/package.json`
+- [x] T005 [P] Configure linting (ruff) and formatting (black) for backend in `backend/pyproject.toml`
+- [x] T006 [P] Configure linting (ESLint) and formatting (Prettier) for frontend in `frontend/.eslintrc.json` and `frontend/.prettierrc`
+- [x] T007 [P] Create `docker-compose.yml` for local development with `postgres`, `redis`, `backend`, and `frontend` services as defined in `quickstart.md`
+- [x] T008 [P] Create `Dockerfile` for backend service in `backend/Dockerfile`
+- [x] T009 [P] Create `Dockerfile` for frontend service in `frontend/Dockerfile`
 
 ---
 
