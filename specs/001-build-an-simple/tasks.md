@@ -37,17 +37,17 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T010 Setup database connection and session management in `backend/src/db/session.py`
-- [ ] T011 Configure Alembic for database migrations in `backend/alembic/`
-- [ ] T012 Implement User model in `backend/src/models/user.py` and generate initial migration
-- [ ] T013 Implement Document model in `backend/src/models/document.py` and generate migration
-- [ ] T014 Implement authentication service for user registration and login in `backend/src/services/user_service.py`
-- [ ] T015 Implement JWT token generation and validation in `backend/src/services/auth_service.py`
-- [ ] T016 [P] Create authentication middleware in `backend/src/middleware/auth.py`
-- [ ] T017 [P] Setup API routing and middleware structure in `backend/src/main.py`
-- [ ] T018 [P] Create Pydantic schemas for User and Auth in `backend/src/schemas/user.py`
-- [ ] T019 [P] Setup basic frontend layout with Next.js App Router in `frontend/src/app/layout.tsx`
-- [ ] T020 [P] Setup API client service in `frontend/src/services/api.ts`
+- [x] T010 Setup database connection and session management in `backend/src/db/session.py`
+- [x] T011 Configure Alembic for database migrations in `backend/alembic/`
+- [x] T012 Implement User model in `backend/src/models/user.py` and generate initial migration
+- [x] T013 Implement Document model in `backend/src/models/document.py` and generate migration
+- [x] T014 Implement authentication service for user registration and login in `backend/src/services/user_service.py`
+- [x] T015 Implement JWT token generation and validation in `backend/src/services/auth_service.py`
+- [x] T016 [P] Create authentication middleware in `backend/src/middleware/auth.py`
+- [x] T017 [P] Setup API routing and middleware structure in `backend/src/main.py`
+- [x] T018 [P] Create Pydantic schemas for User and Auth in `backend/src/schemas/user.py`
+- [x] T019 [P] Setup basic frontend layout with Next.js App Router in `frontend/src/app/layout.tsx`
+- [x] T020 [P] Setup API client service in `frontend/src/services/api.ts`
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -61,19 +61,19 @@
 
 ### Tests for User Story 1 ⚠️
 
-- [ ] T021 [P] [US1] Contract test for `POST /documents` in `backend/tests/contract/test_documents.py`
-- [ ] T022 [P] [US1] Integration test for creating and editing a document in `backend/tests/integration/test_document_flow.py`
-- [ ] T023 [P] [US1] Unit test for `DocumentService` in `backend/tests/unit/test_document_service.py`
-- [ ] T024 [P] [US1] E2E test for document creation flow in `frontend/tests/e2e/document-creation.spec.ts` using Playwright
+- [x] T021 [P] [US1] Contract test for `POST /documents` in `backend/tests/contract/test_documents.py`
+- [x] T022 [P] [US1] Integration test for creating and editing a document in `backend/tests/integration/test_document_flow.py`
+- [x] T023 [P] [US1] Unit test for `DocumentService` in `backend/tests/unit/test_document_service.py`
+- [x] T024 [P] [US1] E2E test for document creation flow in `frontend/tests/e2e/document-creation.spec.ts` using Playwright
 
 ### Implementation for User Story 1
 
-- [ ] T025 [US1] Implement `DocumentService` for CRUD operations in `backend/src/services/document_service.py`
-- [ ] T026 [US1] Implement API endpoints for documents (`/documents` and `/documents/{documentId}`) in `backend/src/api/routes/documents.py`
-- [ ] T027 [US1] Create Pydantic schemas for Document in `backend/src/schemas/document.py`
-- [ ] T028 [P] [US1] Create frontend page for listing documents at `frontend/src/app/documents/page.tsx`
-- [ ] T029 [P] [US1] Create frontend page for viewing/editing a document at `frontend/src/app/documents/[id]/page.tsx`
-- [ ] T030 [US1] Implement CodeMirror 6 editor component in `frontend/src/components/editor/CodeMirrorEditor.tsx`
+- [x] T025 [US1] Implement `DocumentService` for CRUD operations in `backend/src/services/document_service.py`
+- [x] T026 [US1] Implement API endpoints for documents (`/documents` and `/documents/{documentId}`) in `backend/src/api/routes/documents.py`
+- [x] T027 [US1] Create Pydantic schemas for Document in `backend/src/schemas/document.py`
+- [x] T028 [P] [US1] Create frontend page for listing documents at `frontend/src/app/documents/page.tsx`
+- [x] T029 [P] [US1] Create frontend page for viewing/editing a document at `frontend/src/app/documents/[id]/page.tsx`
+- [x] T030 [US1] Implement CodeMirror 6 editor component in `frontend/src/components/editor/CodeMirrorEditor.tsx`
 - [ ] T031 [US1] Integrate document creation and editing functionality with the backend API
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently

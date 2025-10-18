@@ -2,10 +2,11 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY pyproject.toml .
-COPY .venv ./.venv
+RUN pip install uv
 
-RUN . .venv/bin/activate && uv pip install --no-cache-dir -r pyproject.toml
+COPY pyproject.toml .
+
+RUN uv pip install --system --no-cache-dir -e .
 
 COPY . .
 

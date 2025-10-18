@@ -2,7 +2,7 @@
 name = "backend"
 version = "0.1.0"
 description = "Backend for the online collaborative document system."
-authors = ["Gemini"]
+authors = [{name = "Gemini", email = "gemini@google.com"}]
 requires-python = ">=3.11"
 dependencies = [
     "fastapi",
@@ -16,7 +16,12 @@ dependencies = [
     "python-jose[cryptography]",
     "passlib[bcrypt]",
     "pydantic-settings",
+    "pydantic[email]",
     "redis",
+    "openapi-spec-validator",
+    "aiosqlite",
+    "httpx",
+    "pytest-asyncio",
 ]
 
 [build-system]
@@ -31,3 +36,6 @@ target-version = ['py311']
 line-length = 88
 select = ["E", "F", "W", "I", "N", "D"]
 ignore = ["D100", "D104", "D105", "D107"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
