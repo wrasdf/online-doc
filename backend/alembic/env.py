@@ -18,6 +18,11 @@ if config.config_file_name is not None:
 # for 'autogenerate' support
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from src.db.session import Base
+# Import all models so they're registered with Base
+from src.models.user import User
+from src.models.document import Document
+from src.models.document_access import DocumentAccess
+from src.models.collaboration import EditSession, Change
 target_metadata = Base.metadata
 
 # other values from the config, defined by the needs of env.py,

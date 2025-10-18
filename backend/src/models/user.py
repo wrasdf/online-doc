@@ -14,3 +14,5 @@ class User(Base):
 
     documents = relationship("Document", back_populates="owner")
     document_accesses = relationship("DocumentAccess", back_populates="user", foreign_keys="[DocumentAccess.user_id]")
+    edit_sessions = relationship("EditSession", back_populates="user", cascade="all, delete-orphan")
+    changes = relationship("Change", back_populates="user", cascade="all, delete-orphan")

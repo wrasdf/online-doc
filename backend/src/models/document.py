@@ -1,3 +1,4 @@
+from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship, Mapped, mapped_column
 from typing import List
 
@@ -14,3 +15,5 @@ class Document(Base):
 
     owner = relationship("User", back_populates="documents")
     accesses = relationship("DocumentAccess", back_populates="document", cascade="all, delete-orphan")
+    edit_sessions = relationship("EditSession", back_populates="document", cascade="all, delete-orphan")
+    changes = relationship("Change", back_populates="document", cascade="all, delete-orphan")

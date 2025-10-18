@@ -113,16 +113,16 @@
 
 ### Tests for User Story 3 ⚠️
 
-- [ ] T041 [P] [US3] Integration test for WebSocket connection and message broadcasting in `backend/tests/integration/test_websocket.py`
-- [ ] T042 [P] [US3] E2E test for real-time collaboration with two users in `frontend/tests/e2e/collaboration.spec.ts`
+- [x] T041 [P] [US3] Integration test for WebSocket connection and message broadcasting in `backend/tests/integration/test_websocket.py`
+- [x] T042 [P] [US3] E2E test for real-time collaboration with two users in `frontend/tests/e2e/collaboration.spec.ts`
 
 ### Implementation for User Story 3
 
-- [ ] T043 [US3] Implement `EditSession` and `Change` models in `backend/src/models/collaboration.py` and generate migrations
-- [ ] T044 [US3] Implement WebSocket connection handler in `backend/src/api/websocket/handler.py`
-- [ ] T045 [US3] Implement Redis pub/sub for broadcasting messages in `backend/src/services/collaboration_service.py`
-- [ ] T046 [US3] Integrate Yjs on the frontend with the CodeMirror component and WebSocket service in `frontend/src/services/collaboration.ts`
-- [ ] T047 [P] [US3] Implement cursor tracking and user presence indicators in `frontend/src/components/editor/Awareness.tsx`
+- [x] T043 [US3] Implement `EditSession` and `Change` models in `backend/src/models/collaboration.py` and generate migrations
+- [x] T044 [US3] Implement WebSocket connection handler in `backend/src/api/websocket/handler.py`
+- [x] T045 [US3] Implement Redis pub/sub for broadcasting messages in `backend/src/services/collaboration_service.py`
+- [x] T046 [US3] Integrate Yjs on the frontend with the CodeMirror component and WebSocket service in `frontend/src/services/collaboration.ts`
+- [x] T047 [P] [US3] Implement cursor tracking and user presence indicators in `frontend/src/components/editor/Awareness.tsx`
 
 **Checkpoint**: All user stories should now be independently functional
 
@@ -132,11 +132,11 @@
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T048 [P] Documentation updates in `README.md` and `docs/`
-- [ ] T049 Code cleanup and refactoring across `backend/` and `frontend/`
-- [ ] T050 Performance optimization for database queries and WebSocket messages
-- [ ] T051 Security hardening for all API endpoints
-- [ ] T052 Run `quickstart.md` validation to ensure setup is smooth
+- [x] T048 [P] Documentation updates in `README.md` and `docs/`
+- [x] T049 Code cleanup and refactoring across `backend/` and `frontend/`
+- [x] T050 Performance optimization for database queries and WebSocket messages
+- [x] T051 Security hardening for all API endpoints
+- [x] T052 Run `quickstart.md` validation to ensure setup is smooth
 
 ---
 
