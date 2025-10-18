@@ -1,7 +1,8 @@
 from fastapi import APIRouter
-from src.api.routes import documents
+
+from src.api.routes import documents, sharing, users
 
 api_router = APIRouter()
-
-# Register route modules
-api_router.include_router(documents.router)
+api_router.include_router(documents.router, tags=["documents"])
+api_router.include_router(sharing.router, tags=["sharing"])
+api_router.include_router(users.router, tags=["users"])

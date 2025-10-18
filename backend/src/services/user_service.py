@@ -26,6 +26,11 @@ class UserService:
         return result.scalars().first()
 
     @staticmethod
+    async def get_user_by_username(db: AsyncSession, username: str):
+        result = await db.execute(select(User).filter(User.username == username))
+        return result.scalars().first()
+
+    @staticmethod
     async def create_user(db: AsyncSession, user: UserCreate):
         hashed_password = UserService.get_password_hash(user.password)
         db_user = User(email=user.email, username=user.username, password_hash=hashed_password)

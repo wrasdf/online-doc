@@ -1,18 +1,16 @@
-from sqlalchemy.orm import Mapped, mapped_column, relationship
-from sqlalchemy import String, DateTime
-from datetime import datetime
-import uuid
+from sqlalchemy.orm import relationship, Mapped, mapped_column
+from typing import List
+
 from src.db.session import Base
-from src.models.document import Document
+
 
 class User(Base):
     __tablename__ = "users"
 
-    id: Mapped[uuid.UUID] = mapped_column(primary_key=True, default=uuid.uuid4)
-    username: Mapped[str] = mapped_column(String(100), unique=True, nullable=False)
-    email: Mapped[str] = mapped_column(String(255), unique=True, nullable=False)
-    password_hash: Mapped[str] = mapped_column(String(255), nullable=False)
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
-    last_login: Mapped[datetime] = mapped_column(DateTime, nullable=True)
+    id: Mapped[str] = mapped_column(primary_key=True, index=True)
+    username: Mapped[str] = mapped_column(unique=True, index=True)
+    email: Mapped[str] = mapped_column(unique=True, index=True)
+    password_hash: Mapped[str]
 
-    owned_documents = relationship("Document", back_populates="owner")
+    documents = relationship("Document", back_populates="owner")
+    document_accesses = relationship("DocumentAccess", back_populates="user", foreign_keys="[DocumentAccess.user_id]")

@@ -5,6 +5,7 @@ import { useRouter, useParams } from 'next/navigation';
 import { documentService } from '@/services/documentService';
 import { Document } from '@/types/document';
 import CodeMirrorEditor from '@/components/editor/CodeMirrorEditor';
+import ShareDialog from '@/components/sharing/ShareDialog';
 
 export default function DocumentEditPage() {
   const router = useRouter();
@@ -19,6 +20,7 @@ export default function DocumentEditPage() {
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
   const [editingTitle, setEditingTitle] = useState(false);
   const [titleValue, setTitleValue] = useState('');
+  const [shareDialogOpen, setShareDialogOpen] = useState(false);
 
   // Auto-save timer
   const [autoSaveTimer, setAutoSaveTimer] = useState<NodeJS.Timeout | null>(null);
@@ -252,6 +254,14 @@ export default function DocumentEditPage() {
                 {saving ? 'Saving...' : 'Save'}
               </button>
 
+              {/* Share Button */}
+              <button
+                className="btn btn-outline-primary btn-sm"
+                onClick={() => setShareDialogOpen(true)}
+              >
+                Share
+              </button>
+
               {/* Delete Button */}
               <button
                 className="btn btn-outline-danger btn-sm"
@@ -293,6 +303,16 @@ export default function DocumentEditPage() {
           />
         </div>
       </div>
+
+      {/* Share Dialog */}
+      <ShareDialog
+        documentId={documentId}
+        isOpen={shareDialogOpen}
+        onClose={() => setShareDialogOpen(false)}
+        onShare={(collaborators) => {
+          console.log('Document shared with:', collaborators);
+        }}
+      />
     </div>
   );
 }

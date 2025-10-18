@@ -74,7 +74,7 @@
 - [x] T028 [P] [US1] Create frontend page for listing documents at `frontend/src/app/documents/page.tsx`
 - [x] T029 [P] [US1] Create frontend page for viewing/editing a document at `frontend/src/app/documents/[id]/page.tsx`
 - [x] T030 [US1] Implement CodeMirror 6 editor component in `frontend/src/components/editor/CodeMirrorEditor.tsx`
-- [ ] T031 [US1] Integrate document creation and editing functionality with the backend API
+- [x] T031 [US1] Integrate document creation and editing functionality with the backend API
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -88,18 +88,18 @@
 
 ### Tests for User Story 2 ⚠️
 
-- [ ] T032 [P] [US2] Contract test for `POST /documents/{documentId}/share` in `backend/tests/contract/test_sharing.py`
-- [ ] T033 [P] [US2] Integration test for sharing a document in `backend/tests/integration/test_sharing_flow.py`
-- [ ] T034 [P] [US2] E2E test for sharing a document in `frontend/tests/e2e/sharing.spec.ts`
+- [x] T032 [P] [US2] Contract test for `POST /documents/{documentId}/share` in `backend/tests/contract/test_sharing.py`
+- [x] T033 [P] [US2] Integration test for sharing a document in `backend/tests/integration/test_sharing_flow.py`
+- [x] T034 [P] [US2] E2E test for sharing a document in `frontend/tests/e2e/sharing.spec.ts`
 
 ### Implementation for User Story 2
 
-- [ ] T035 [US2] Implement `DocumentAccess` model in `backend/src/models/document_access.py` and generate migration
-- [ ] T036 [US2] Implement `SharingService` in `backend/src/services/sharing_service.py`
-- [ ] T037 [US2] Implement API endpoints for sharing (`/documents/{documentId}/share`) in `backend/src/api/routes/sharing.py`
-- [ ] T038 [US2] Create Pydantic schemas for Sharing in `backend/src/schemas/sharing.py`
-- [ ] T039 [P] [US2] Create frontend UI for sharing documents in `frontend/src/components/sharing/ShareDialog.tsx`
-- [ ] T040 [US2] Integrate sharing functionality with the backend API
+- [x] T035 [US2] Implement `DocumentAccess` model in `backend/src/models/document_access.py` and generate migration
+- [x] T036 [US2] Implement `SharingService` in `backend/src/services/sharing_service.py`
+- [x] T037 [US2] Implement API endpoints for sharing (`/documents/{documentId}/share`) in `backend/src/api/routes/sharing.py`
+- [x] T038 [US2] Create Pydantic schemas for Sharing in `backend/src/schemas/sharing.py`
+- [x] T039 [P] [US2] Create frontend UI for sharing documents in `frontend/src/components/sharing/ShareDialog.tsx`
+- [x] T040 [US2] Integrate sharing functionality with the backend API
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
 
