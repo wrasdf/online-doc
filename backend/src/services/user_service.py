@@ -4,7 +4,12 @@ from src.models.user import User
 from src.schemas.user import UserCreate
 from passlib.context import CryptContext
 
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+from src.core.config import settings
+
+if settings.TESTING:
+    pwd_context = CryptContext(schemes=["plaintext"], deprecated="auto")
+else:
+    pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 class UserService:
     @staticmethod

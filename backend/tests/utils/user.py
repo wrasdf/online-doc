@@ -1,6 +1,7 @@
 
 import random
 import string
+from datetime import datetime
 from typing import Tuple
 
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -16,7 +17,8 @@ def random_lower_string(length: int = 8) -> str:
 
 
 def random_email() -> str:
-    return f"{random_lower_string()}@{random_lower_string()}.com"
+    timestamp = datetime.now().strftime("%Y%m%d%H%M%S%f")
+    return f"{random_lower_string()}_{timestamp}@{random_lower_string()}.com"
 
 
 def random_password() -> str:
@@ -26,11 +28,12 @@ def random_password() -> str:
 async def create_random_user(db_session: AsyncSession, username: str = None, email: str = None) -> Tuple[User, dict]:
     """
     Create a random user and return the user object and auth headers.
-    """ 
+    """
     if email is None:
         email = random_email()
     if username is None:
-        username = random_lower_string(12)
+        timestamp = datetime.now().strftime("%Y%m%d%H%M%S%f")
+        username = f"{random_lower_string()}_{timestamp}"
     password = random_password()
     user_in = UserCreate(username=username, email=email, password=password)
     user = await UserService.create_user(db_session, user_in)

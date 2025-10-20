@@ -1,17 +1,9 @@
-"""
-Collaboration models for real-time editing.
-
-Includes:
-- EditSession: Tracks active user sessions and cursor positions
-- Change: Records document changes for real-time synchronization
-"""
-
 from datetime import datetime
 from typing import Optional
-
-from sqlalchemy import ForeignKey, String, Integer, Text, LargeBinary, DateTime, CheckConstraint, Enum as SQLEnum
+from sqlalchemy import ForeignKey, String, Integer, Text, LargeBinary, DateTime, CheckConstraint, Enum as SQLEnum, UUID
 from sqlalchemy.orm import relationship, Mapped, mapped_column
 import enum
+import uuid
 
 from src.db.session import Base
 
@@ -39,9 +31,9 @@ class EditSession(Base):
     """
     __tablename__ = "edit_sessions"
 
-    id: Mapped[str] = mapped_column(String, primary_key=True, index=True)
-    user_id: Mapped[str] = mapped_column(ForeignKey("users.id"), nullable=False)
-    document_id: Mapped[str] = mapped_column(ForeignKey("documents.id"), nullable=False)
+    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, index=True)
+    user_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("users.id"), nullable=False)
+    document_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("documents.id"), nullable=False)
 
     # Cursor and awareness information
     cursor_position: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
@@ -98,9 +90,9 @@ class Change(Base):
     """
     __tablename__ = "changes"
 
-    id: Mapped[str] = mapped_column(String, primary_key=True, index=True)
-    document_id: Mapped[str] = mapped_column(ForeignKey("documents.id"), nullable=False)
-    user_id: Mapped[str] = mapped_column(ForeignKey("users.id"), nullable=False)
+    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, index=True)
+    document_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("documents.id"), nullable=False)
+    user_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("users.id"), nullable=False)
 
     # Operation details
     operation_type: Mapped[str] = mapped_column(
